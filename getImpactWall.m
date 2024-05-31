@@ -12,7 +12,7 @@ if (ray_dxyz(1) < 0)
 elseif (ray_dxyz(1) > 0)
     displacement = (roomDims(1) - ray_xyz(1)) / ray_dxyz(1);
     if displacement==0
-        displacement=1000;
+        displacement=1000;c
     end
     surfaceofimpact = 2; %"OpSmallWall"
 end

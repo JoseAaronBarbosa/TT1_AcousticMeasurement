@@ -14,7 +14,7 @@ function [RIRsq,DC,t,AcousticParams] = RIR_Analisys(method, input, room_dimensio
     end
     sound_duration = length(y)/fs;
     t = ((0:length(y)-1)/fs)';
-    
+    y = bandpass(y,[88.39 176.8],fs);
     RIRsq = y.^2;
     schroeder_cumsum = cumsum(flipud(RIRsq));
     schroeder_normalized = schroeder_cumsum / max(schroeder_cumsum);
