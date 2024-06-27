@@ -24,7 +24,7 @@ abs_coeffs(:,3) = [0.14,0.10,0.06,0.08,0.10,0.10,0.10]; %Door
 
 scatt_coeffs = [];
 scatt_coeffs(:,1) = [0.30,0.50,0.60,0.60,0.70,0.70,0.70];
-scatt_coeffs(:,2) = [0.30,0.50,0.60,0.60,0.70,0.70,0.70];
+scatt_coeffs(:,2) = [0.20,0.40,0.50,0.50,0.60,0.60,0.60];
 scatt_coeffs(:,3) =  [0.30,0.50,0.60,0.60,0.70,0.70,0.70];
 
 num_FBands = length(FVect);
@@ -47,17 +47,17 @@ scatt_map{6} = zeros(round(room_dim(1)*100),round(room_dim(2)*100),num_FBands);
 
 %% Define wall materials
 [abs_map, scatt_map] = updateAbsScattCoeffs(abs_map,scatt_map,1,abs_coeffs(:,1),...
-    scatt_coeffs(:,1),[0,0],[room_dim(2),room_dim(3)]); %SmallWall
+    scatt_coeffs(:,2),[0,0],[room_dim(2),room_dim(3)]); %SmallWall
 [abs_map, scatt_map] = updateAbsScattCoeffs(abs_map,scatt_map,2,abs_coeffs(:,1),...
-    scatt_coeffs(:,1),[0,0],[room_dim(2),room_dim(3)]); %OpSmallWall
+    scatt_coeffs(:,2),[0,0],[room_dim(2),room_dim(3)]); %OpSmallWall
 [abs_map, scatt_map] = updateAbsScattCoeffs(abs_map,scatt_map,3,abs_coeffs(:,1),...
-    scatt_coeffs(:,1),[0,0],[room_dim(1),room_dim(3)]); %LargeWall
+    scatt_coeffs(:,2),[0,0],[room_dim(1),room_dim(3)]); %LargeWall
 [abs_map, scatt_map] = updateAbsScattCoeffs(abs_map,scatt_map,4,abs_coeffs(:,1),...
-    scatt_coeffs(:,1),[0,0],[room_dim(1),room_dim(3)]); %OpLargeWall
+    scatt_coeffs(:,2),[0,0],[room_dim(1),room_dim(3)]); %OpLargeWall
 [abs_map, scatt_map] = updateAbsScattCoeffs(abs_map,scatt_map,5,abs_coeffs(:,1),...
-    scatt_coeffs(:,1),[0,0],[room_dim(1),room_dim(2)]); %Floor
+    scatt_coeffs(:,2),[0,0],[room_dim(1),room_dim(2)]); %Floor
 [abs_map, scatt_map] = updateAbsScattCoeffs(abs_map,scatt_map,6,abs_coeffs(:,1),...
-    scatt_coeffs(:,1),[0,0],[room_dim(1),room_dim(2)]); %Ceiling
+    scatt_coeffs(:,2),[0,0],[room_dim(1),room_dim(2)]); %Ceiling
 
 %% Reflections map
 ref_map = cell(1,num_FBands);
